@@ -2,12 +2,12 @@ let clicked = true;
 document.addEventListener("DOMContentLoaded", function() {
     let button = document.getElementsByTagName("input")[0];
     let path = document.getElementsByTagName("path")[0];
-    const socket = new WebSocket("ws://localhost:3000");
+    const socket = new WebSocket("https://synchronized-button.onrender.com");
     button.addEventListener("click", function(){
-        socket.send("ButtonClicked");
+        socket.send("1");
     });
     socket.onmessage = ({data}) => {
-        if (data == "ButtonClicked") {
+        if (data == "1") {
             if(clicked){
                 path.setAttribute("stroke", "#dc2121");
                 path.setAttribute("fill", "#dc2121");
