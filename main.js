@@ -2,7 +2,7 @@ let clicked = true;
 document.addEventListener("DOMContentLoaded", function() {
     let button = document.getElementsByTagName("input")[0];
     let path = document.getElementsByTagName("path")[0];
-    const socket = new WebSocket("https://synchronized-button.onrender.com");
+    const socket = new WebSocket("wss://synchronized-button.onrender.com");
     button.addEventListener("click", function(){
         socket.send("1");
     });
